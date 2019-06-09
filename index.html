@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>
+            Manipulacao DOM
+        </title>
+    </head>
+    <body>
+        <div id="app">
+            <input type="text" name ="nome">
+            <button class="botao">Adicionar</button>
+            <button id="btn">Amandha quer Dar?</button>
+        </div>
+        <script>
+            function mostrarAlerta(){
+                alert("Sim");
+            }
+            function mostrarDica(){
+                alert("Me Aperta!");
+            }
+
+            var inputElement = document.getElementById("btn");
+            var btns = document.getElementsByTagName("button");
+            var querySelectorInput = document.querySelector("body div#app input");// Retorna elemento com base no caminho
+            var querySelectorInput = document.querySelector("input[name =nome]");// Retorna elemento com base em suas caracteristicas
+            var querySelector = document.querySelectorAll("button");// Retorna diversos elementos baseado em seu tipo
+            var btnAmandha = document.querySelector("button[id=btn]");
+            console.log(inputElement);
+            console.log(btns);
+            console.log(querySelector);
+            console.log(querySelectorInput);
+            console.log(btnAmandha);
+
+            btnAmandha.onclick = function(){
+                alert(querySelectorInput.value);
+            }
+
+        </script>
+    </body>
+</html>
