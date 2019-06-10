@@ -1,0 +1,220 @@
+<html>
+    <head>
+        <title>Curso Javascript</title>
+    </head>
+    <body>
+        <script>
+            console.log('Hello World!');
+            var nome = 'Rafael';
+            var numeroInt = 10;
+            var numeroFloat = 20.5;
+            var boleano = true;
+            var vetor = [1,2,3];
+            var objeto = {
+                prop1: 2,
+                prop2: "Teste",
+                prop3: [true,false,true],
+                prop4: false
+            };
+
+            console.log(vetor);
+            console.log(objeto.prop1);
+            console.log(objeto.prop2);
+
+            var x = 10;
+            var y = 2;
+            var c = 3, d = 9;
+
+            console.log(x,y,c,d);
+
+            var somar = x + y;
+            var subtracao = c - d;
+            var divisao =  x/d;
+            var multiplicacao = y * c;
+            var mod = x % y;
+
+            console.log(somar);
+            console.log(subtracao);
+            console.log(divisao);
+            console.log(multiplicacao);
+            console.log(mod);
+
+            //incremento
+            x = x+ 3;
+            //ou
+            x+=3;
+            //multiplicacao
+            x*=y;
+
+            //Funcoes
+            // Nao há a necessidade de definir o tipo de parametro recebido, ou de retorno que a funçao terá
+            function soma(numero1,numero2){
+                var resultado = numero1 + numero2;
+                return resultado;
+            }
+
+            //Condicionais
+            // Em Js é possivel fazer comparacao com == ou ===, sendo a diferença entre os dois o seguinte:
+            // == Compara apenas os valores contidos nas variaveis, por exemplo, retorna true para um número igual a uma string de seu mesmo valor.
+            // === Compara tipos e valores, entao a comparação acima que retornava true passa a retornar false
+            function retornaSexo(sexo){
+                if(sexo === 'M'){
+                    return 'Masculino';
+                }else if(sexo === 'F')
+                {
+                    return 'Feminino';
+                }else{
+                    return "Outro";
+                }
+            }
+
+            function retornaSexo2(sexo){
+                switch(sexo){
+                    case 'M':
+                    return 'Masculino';
+                    case 'F':
+                    return 'Feminino';
+                    default:
+                        return 'Outro';
+                }
+            }
+
+            console.log(soma(2,3));
+            console.log(retornaSexo('F'));
+            console.log(retornaSexo('P'));
+            console.log(retornaSexo2('F'));
+            console.log(retornaSexo2('P'));
+
+            // Verificadores lógicos
+            // And (&&), or(||), not(!= ou !==)
+
+            function retornarTipoPessoa(pessoa){
+
+
+                if(pessoa.idade >= 18 && pessoa.sexo === 'M'){
+                    texto = 'Homem adulto';
+                }else if( pessoa.idade < 18 && pessoa.sexo === 'M'){
+                    texto = 'Homem menor';
+                }
+
+                if(pessoa.idade >= 18 && pessoa.sexo === 'F'){
+                    texto = 'Mulher adulto';
+                }else if( pessoa.idade < 18 && pessoa.sexo === 'F'){
+                    texto = 'Mulher menor';
+                }
+
+                if(pessoa.cabelo === 'Preto' || pessoa.cabelo === 'Marrom'){
+                    texto += " Cabelo Escuro";
+                }
+                else{
+                    texto += " Cabelo Claro";
+                }
+
+                if(pessoa.trabalha !== 'S'){
+                    texto += " Não trabalha";
+                }
+                else{
+                    texto += " Trabalha";
+                }
+
+                if(! pessoa.dependente){
+                    texto += " Independente"
+                }
+
+                return texto;
+            }
+
+            homemA = {
+                idade: 18,
+                sexo: 'M',
+                cabelo: "Preto",
+                trabalha: 'S',
+                dependente: false
+            };
+
+            homemB = {
+                idade: 15,
+                sexo: 'M',
+                cabelo: "Loiro",
+                trabalha: 'N',
+                dependente: true
+            };
+
+            mulherA = {
+                idade: 18,
+                sexo: 'F',
+                cabelo: "Ruivo",
+                trabalha: 'N',
+                dependente: true
+            };
+
+            mulherB = {
+                idade: 15,
+                sexo: 'F',
+                cabelo: "Marrom",
+                trabalha: 'S',
+                dependente: true
+            };
+
+            console.log(retornarTipoPessoa(homemA));
+            console.log(retornarTipoPessoa(homemB));
+            console.log(retornarTipoPessoa(mulherA));
+            console.log(retornarTipoPessoa(mulherB));
+            
+
+            // If Ternário
+            // Simplificação do if removendo sua verbosidade
+
+            var maior = 10, menor = 5;
+
+            resultado = (maior > menor) ? "sim" : "não";
+            console.log("(maior > menor) " + resultado);
+            resultado = (maior < menor) ? "sim" : "não";
+            console.log("(maior < menor) " + resultado);
+            resultado = (maior == menor) ? "sim" : "não";
+            console.log("(maior == menor) "+resultado);
+
+            // Looping
+
+            function loopingFor(){
+                resultado = 0;
+                for(var idx = 0; idx <= 100; idx ++){
+                    console.log(idx);
+                    resultado += idx;
+                }
+                console.log(resultado);
+            }
+
+            function loopingWhile(){
+                
+                var idx = 0,resultado = 0;
+                while(idx <= 30){
+                    console.log(idx ** 2);
+                    resultado += (idx ** 2);
+                    idx ++;
+                }
+                console.log(resultado)
+            }
+
+            loopingFor();
+            loopingWhile();
+
+            //Intervalo
+            // Função que executará varias vezes dentro de um intervalo especifico.
+
+            function exibeMinuto(){
+                console.log("Minuto");
+            }
+
+            function exibeCincoSegundos(){
+                console.log("5 segundos");
+            }
+
+            setInterval(exibeMinuto,60000) // Inicia um intervalo. Caso a funçao esteja com os parentes durante essa chamada, ela nao sera referenciada e irá rodar apenas uma vez.
+            setTimeout(exibeCincoSegundos,5000) // Diferente da setInterval, dessa vez a funçao referenciada irá rodar apenas uma vez após finalizar o tempo definido.
+            // Javascript
+            // Se o JS ficar no final da pagina, a pagina será carregada mais rapidamente
+            // E como o Js é dependente dos elementos de tela, dessa forma garante-se que tudo estara carregado quando ele precisar
+        </script>
+    </body>
+</html>

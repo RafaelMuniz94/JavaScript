@@ -1,0 +1,41 @@
+<html>
+    <Head>
+        <Title>
+            Desafio 1
+        </Title>
+    </Head>
+    <body>
+        <script>
+
+            var endereco = {
+                rua: "Rua dos Pinheiros",
+                numero: 1293,
+                bairro: "Centro",
+                cidade: "São Paulo",
+                uf: "SP"
+            }
+
+            var exemplo= "O usuário mora em São Paulo / SP, no bairro Centro, na rua \"Rua dos Pinheiros\" com nº 1293."
+            
+            function retornarEnderecoFormatado(endereco)
+            {
+                texto = "O usuário mora em ";
+                texto += endereco.cidade + " / " + endereco.uf + ", no bairro ";
+                texto += endereco.bairro+", ";
+                texto += "na rua \""+endereco.rua+"\" com nº ";
+                texto += endereco.numero + "."
+
+                return texto;
+            }
+
+            function comparar(enderecoFormatado, exemplo){
+                return (enderecoFormatado === exemplo);
+            }
+
+
+            console.log(retornarEnderecoFormatado(endereco));
+            console.log(comparar(retornarEnderecoFormatado(endereco),exemplo))
+
+        </script>
+    </body>
+</html>
