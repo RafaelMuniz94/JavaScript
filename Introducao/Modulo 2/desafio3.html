@@ -1,0 +1,47 @@
+<html>
+
+<head>
+    <title>Desafio 3</title>
+</head>
+
+<body>
+    <div id="Exe3">
+        <h2>3º exercício</h2>
+        <p>A partir do seguinte vetor:</p>
+        <code>
+            <pre>
+                    var nomes = ["Diego", "Gabriel", "Lucas"];
+            </pre>
+        </code>
+        <p>
+            <pre>Preencha uma lista (&#60ul&#62) no HTML com os itens da seguinte forma:
+                    ● Diego
+                    ● Gabriel
+                    ● Lucas</pre>
+        </p>
+    </div>
+    <div id="Resolucao">
+
+    </div>
+    <script>
+
+        var nomes = ["Diego", "Gabriel", "Lucas"];
+        var lista = document.createElement("ul");
+
+        function preencheLista(){
+            for(var nome of nomes){
+                var text = document.createTextNode(nome);
+                var linha = document.createElement("li");
+                linha.appendChild(text);
+                lista.appendChild(linha);
+            }
+        }
+
+        preencheLista();
+
+        var divResolucao = document.querySelector("#Resolucao");
+        divResolucao.appendChild(lista);
+    </script>
+</body>
+
+</html>

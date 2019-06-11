@@ -1,0 +1,38 @@
+<body>
+
+    <head>
+        <title>Desafio 1</title>
+    </head>
+
+    <body>
+        <div id="Ex1">
+            <h2>1º exercício</h2>
+            <p>Crie um botão que ao ser clicado cria um novo elemento em tela com a forma de um quadrado
+                amarelo com 100px de altura e largura. Sempre que o botão for clicado um novo quadrado deve
+                aparecer na tela.</p>
+        </div>
+        <div id="Resolucao">
+
+        </div>
+        <script>
+
+            var divResolucao = document.querySelector("div#Resolucao");
+            var btnAdicionarQuadrado = document.createElement("button");
+            var textNode = document.createTextNode("Adicionar Quadrado!");
+            btnAdicionarQuadrado.appendChild(textNode);
+            divResolucao.appendChild(btnAdicionarQuadrado)
+
+            btnAdicionarQuadrado.onclick = function criarNovoBotao() {
+
+                var quadrado = document.createElement('div');
+                quadrado.style.width = 100;
+                quadrado.style.height = 100;
+                quadrado.style.backgroundColor = "#efe700";
+                divResolucao.appendChild(quadrado)
+            }
+
+
+
+        </script>
+    </body>
+</body>
